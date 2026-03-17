@@ -1,0 +1,107 @@
+services:
+  app:
+    build:
+      context: .
+    image: traceability-mvp:local
+    ports:
+      - "${APP_PORT:-18941}:8000"
+    environment:
+      TRACEABILITY_DATABASE_URL: ${TRACEABILITY_DATABASE_URL:-sqlite:////data/app.db}
+      INGEST_SIGNING_KEYS: ${INGEST_SIGNING_KEYS:-{"factory-key-1":"super-secret"}}
+      ANCHOR_ADAPTER: ${ANCHOR_ADAPTER:-active_mock}
+      ANCHOR_MOCK_MODE: ${ANCHOR_MOCK_MODE:-success}
+      ANCHOR_MAX_RETRIES: ${ANCHOR_MAX_RETRIES:-3}
+      ANCHOR_ALERT_SUPPRESSION_SECONDS: ${ANCHOR_ALERT_SUPPRESSION_SECONDS:-300}
+      AUTH_JWT_SECRET: ${AUTH_JWT_SECRET:-dev-auth-secret}
+      AUTH_JWT_ISSUER: ${AUTH_JWT_ISSUER:-traceability-auth}
+      AUTH_DEMO_CREDENTIALS: ${AUTH_DEMO_CREDENTIALS:-{"admin":{"password":"admin123","role":"admin"},"regulator":{"password":"regulator123","role":"regulator"}}}
+      CORS_ALLOW_ORIGINS: ${CORS_ALLOW_ORIGINS:-*}
+      ANCHOR_WORKER_BATCH_SIZE: ${ANCHOR_WORKER_BATCH_SIZE:-100}
+    volumes:
+      - traceability-data:/data
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          python -c "import urllib.request,sys;sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health', timeout=3).getcode()==200 else 1)"
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-}
+    image: traceability-frontend:local
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-18940}:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-}
+      INTERNAL_API_URL: ${INTERNAL_API_URL:-http://app:8000}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          node -e "fetch('http://localhost:3000').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 10s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
+  worker:
+    image: traceability-mvp:local
+    build:
+      context: .
+    depends_on:
+      - app
+    environment:
+      TRACEABILITY_DATABASE_URL: ${TRACEABILITY_DATABASE_URL:-sqlite:////data/app.db}
+      INGEST_SIGNING_KEYS: ${INGEST_SIGNING_KEYS:-{"factory-key-1":"super-secret"}}
+      ANCHOR_ADAPTER: ${ANCHOR_ADAPTER:-active_mock}
+      ANCHOR_MOCK_MODE: ${ANCHOR_MOCK_MODE:-success}
+      ANCHOR_MAX_RETRIES: ${ANCHOR_MAX_RETRIES:-3}
+      ANCHOR_ALERT_SUPPRESSION_SECONDS: ${ANCHOR_ALERT_SUPPRESSION_SECONDS:-300}
+      AUTH_JWT_SECRET: ${AUTH_JWT_SECRET:-dev-auth-secret}
+      AUTH_JWT_ISSUER: ${AUTH_JWT_ISSUER:-traceability-auth}
+      ANCHOR_WORKER_BATCH_SIZE: ${ANCHOR_WORKER_BATCH_SIZE:-100}
+      WORKER_POLL_SECONDS: ${WORKER_POLL_SECONDS:-5}
+    volumes:
+      - traceability-data:/data
+    command:
+      - python
+      - -m
+      - app.jobs.anchor_worker
+      - --poll-seconds
+      - "${WORKER_POLL_SECONDS:-5}"
+    profiles:
+      - worker
+
+  smoke:
+    image: traceability-mvp:local
+    build:
+      context: .
+    depends_on:
+      app:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
+    command:
+      - python
+      - scripts/device_admin_smoke.py
+      - --base-url
+      - ${SMOKE_BASE_URL:-http://app:8000}
+      - --username
+      - ${SMOKE_USERNAME:-admin}
+      - --password
+      - ${SMOKE_PASSWORD:-admin123}
+    profiles:
+      - smoke
+
+volumes:
+  traceability-data:

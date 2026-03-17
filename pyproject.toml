@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backend-fastapi-traceability-mvp"
+version = "0.1.0"
+description = "FastAPI bootstrap baseline"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0,<1.0.0",
+  "uvicorn>=0.30.0,<1.0.0",
+  "alembic>=1.13.0,<2.0.0",
+  "sqlalchemy>=2.0.0,<3.0.0",
+  "httpx>=0.27.0,<1.0.0",
+  "cryptography>=42.0.0,<44.0.0",
+  "web3>=6.11.0,<8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0,<9.0.0",
+  "pytest-asyncio>=0.23.0,<1.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*", "simulator*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+markers = [
+  "e2e: tests that require local chain infrastructure",
+]

@@ -1,0 +1,53 @@
+# Local SQLite runtime artifacts
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/archive/**/*.db
+
+# Legacy root-level SQLite guard
+/*.db
+
+# Root environment files
+/.env
+/.env.*
+!/.env.example
+
+# Local build and cache artifacts
+/.next/
+/.pytest_cache/
+/.ruff_cache/
+/.sisyphus/
+/.venv/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# Local logs and crash dumps
+*.log
+*.stackdump
+/server-logs/
+
+# Local scratch files
+/NUL
+/-
+/task-*-playwright-console-errors.txt
+/Deliverables
+/Summary
+
+# Document editor temporary files
+article/~$*
+article/~WRL*.tmp
+/.docx_render_*/
+/docx_render_*/
+article/_docx_extract/
+article/_tmp_docx_media_*/
+article/_verify_redrawn_docx/
+docx_flowcharts/rendered/
+docx_flowcharts/rendered_format/
+
+# Hardware generated artifacts
+hardware/cherry/build/
+hardware/cherry/.tmp_cube/
+hardware/*/build/
+hardware/*/.tmp_cube/
+hardware/cherry_update_*/
