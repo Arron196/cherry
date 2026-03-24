@@ -1,0 +1,50 @@
+{
+  "temperature_c": {
+    "ideal": {
+      "min": 2.0,
+      "max": 8.0
+    },
+    "warning": {
+      "min": 0.0,
+      "max": 10.0
+    },
+    "weight": 0.3
+  },
+  "humidity_pct": {
+    "ideal": {
+      "min": 60.0,
+      "max": 85.0
+    },
+    "warning": {
+      "min": 50.0,
+      "max": 90.0
+    },
+    "weight": 0.2
+  },
+  "co2_ppm": {
+    "ideal": {
+      "min": 100000.0,
+      "max": 150000.0
+    },
+    "warning": {
+      "min": 80000.0,
+      "max": 180000.0
+    },
+    "weight": 0.3
+  },
+  "vibration_g": {
+    "ideal": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "warning": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "weight": 0.2
+  },
+  "grade_thresholds": {
+    "A": 80,
+    "B": 60
+  }
+}
