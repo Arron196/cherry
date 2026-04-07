@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #022c22;
+
+  --color-accent-teal: #22d3ee;
+  --color-accent-gold: #fbbf24;
+  --color-accent-ember: #fb7185;
+
+  --color-status-success: #34d399;
+  --color-status-warning: #f59e0b;
+  --color-status-error: #f87171;
+  --color-status-info: #22d3ee;
+
+  --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Cascadia Mono", "Consolas", "Liberation Mono", monospace;
+
+  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.35);
+  --shadow-panel: 0 28px 70px -46px rgba(2, 6, 23, 0.92);
+}
+
+@utility glass {
+  @apply border border-slate-700/70 bg-slate-900/82 backdrop-blur-xl shadow-[0_24px_50px_-32px_rgba(2,6,23,0.9)];
+  background-image: linear-gradient(160deg, rgba(148, 163, 184, 0.11), rgba(15, 23, 42, 0.08));
+}
+
+@utility glass-subtle {
+  @apply border border-slate-700/70 bg-slate-900/64 backdrop-blur-sm;
+  background-image: linear-gradient(160deg, rgba(148, 163, 184, 0.09), rgba(15, 23, 42, 0.06));
+}
+
+@utility card-premium {
+  @apply glass relative overflow-hidden rounded-2xl p-6 transition-[border-color,box-shadow,background-color,transform] duration-300 hover:-translate-y-0.5 hover:border-primary-300/45 hover:bg-slate-900/88 hover:shadow-[0_30px_66px_-40px_rgba(34,211,238,0.45)];
+}
+
+@utility panel-shell {
+  @apply relative overflow-hidden rounded-2xl border border-slate-700/75 bg-slate-950/72 backdrop-blur-xl;
+  box-shadow: var(--shadow-panel);
+  background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.66), rgba(2, 6, 23, 0.72));
+}
+
+@utility display-heading {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+@utility metric-figure {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+@utility accent-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.09) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+@utility edge-highlight {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(15, 23, 42, 0.45);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 14px rgba(34, 197, 94, 0.35);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes aurora-shift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate3d(10px, -14px, 0) scale(1.06);
+    opacity: 0.46;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 3 10 22;
+    --foreground: 241 245 249;
+  }
+
+  body {
+    color: rgb(var(--foreground));
+    background-color: rgb(var(--background));
+    background-image:
+      radial-gradient(circle at 8% 10%, rgba(16, 185, 129, 0.22), transparent 38%),
+      radial-gradient(circle at 92% 12%, rgba(34, 211, 238, 0.18), transparent 34%),
+      radial-gradient(circle at 74% 84%, rgba(251, 191, 36, 0.13), transparent 34%),
+      linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+    background-size: auto, auto, auto, 42px 42px, 42px 42px;
+    background-position: 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
+    @apply h-screen overflow-hidden overscroll-none font-sans antialiased text-slate-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    background-color: rgba(52, 211, 153, 0.28);
+    color: #f8fafc;
+  }
+}
