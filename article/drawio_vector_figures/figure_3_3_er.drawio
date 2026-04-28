@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-04-22T00:00:00.000Z" agent="Codex" version="25.0.2">
+  <diagram id="9552f4faa643" name="图3-3 ER">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="核心数据表 ER 关系图" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontColor=#1F2D3D;" vertex="1" parent="1">
+          <mxGeometry x="52" y="34" width="860" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="核心实体、主外键关系与逻辑关联" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#66788A;" vertex="1" parent="1">
+          <mxGeometry x="52" y="84" width="1200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;设备治理域&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;fontColor=#1F2D3D;fontSize=18;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="170" width="330" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;事件与处理域&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;fontColor=#1F2D3D;fontSize=18;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="170" width="720" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;锚定与审计域&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;fontColor=#1F2D3D;fontSize=18;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="170" width="410" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;managed_devices&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;UNIQUE device_id&lt;br/&gt;status / disabled_at&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="80" y="240" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;managed_device_keys&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK device_id -&amp;gt; managed_devices.id&lt;br/&gt;UNIQUE key_id&lt;br/&gt;algorithm / status&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="80" y="420" width="270" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;ingest_requests&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;UNIQUE idempotency_key&lt;br/&gt;payload_hash&lt;br/&gt;ingest_status / retry_count&lt;br/&gt;FK event_id -&amp;gt; events.id&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="440" y="285" width="280" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;events&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;device_id / batch_id / timestamp&lt;br/&gt;sensor_payload / signature_envelope&lt;br/&gt;UNIQUE canonical_hash&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="775" y="235" width="310" height="225" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;quality_results&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK event_id&lt;br/&gt;check_name / score&lt;br/&gt;status&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="470" y="560" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;alerts&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK event_id&lt;br/&gt;alert_type / severity&lt;br/&gt;status&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="790" y="560" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;anchor_submissions&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK event_id&lt;br/&gt;transaction_hash&lt;br/&gt;canonical_hash&lt;br/&gt;status&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="1190" y="240" width="300" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;anchor_receipts&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK event_id&lt;br/&gt;network&lt;br/&gt;transaction_hash&lt;br/&gt;receipt_payload&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="1190" y="435" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;audits&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;PK id&lt;br/&gt;FK event_id&lt;br/&gt;actor / action / target&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="1190" y="620" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;双层幂等：ingest_requests.idempotency_key 处理请求重放，events.canonical_hash 处理内容重复。&lt;/div&gt;" style="shape=note;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#A9B7C4;strokeWidth=1.2;fontColor=#66788A;spacingTop=16;spacingLeft=16;spacingRight=16;" vertex="1" parent="1">
+          <mxGeometry x="260" y="780" width="1080" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="1000" value="1:N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1001" value="N:1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1002" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1003" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1004" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1005" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1006" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1007" value="device_id 逻辑关联" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;dashed=1;" edge="1" parent="1" source="13" target="16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

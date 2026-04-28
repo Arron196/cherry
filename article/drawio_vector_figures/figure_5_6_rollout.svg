@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>四阶段 Rollout 策略图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>渐进上线阶段、SLO 监控与自动回滚回路</text>
+<path d='M 370 310 L 450 310' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 700 310 L 780 310' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 1030 310 L 1110 310' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 905 360 L 650 520' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 1040 600 L 1245 715' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 1400 755 L 200 755 L 200 360 L 120 310' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<rect x='70' y='180' width='1370' height='250' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='70' y1='210' x2='1440' y2='210' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='84' y='202' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>上线阶段</text>
+<rect x='120' y='260' width='250' height='100' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='245.0' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>rollback_safe</text>
+<text x='245.0' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>100% Mock</text>
+<text x='245.0' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>零 Gas</text>
+<text x='245.0' y='371' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>默认模式</text>
+<rect x='450' y='260' width='250' height='100' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='575.0' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>shadow</text>
+<text x='575.0' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>主路径仍走 Mock</text>
+<text x='575.0' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>副本并发发往 EVM</text>
+<text x='575.0' y='371' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>只看日志与指标</text>
+<rect x='780' y='260' width='250' height='100' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='905.0' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>canary</text>
+<text x='905.0' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>5% 真流量走 EVM</text>
+<text x='905.0' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>95% 继续走 Mock</text>
+<text x='905.0' y='371' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>风险面受控</text>
+<rect x='1110' y='260' width='250' height='100' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1235.0' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>full</text>
+<text x='1235.0' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>100% EVM</text>
+<text x='1235.0' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>Mock 退出主路径</text>
+<rect x='260' y='520' width='780' height='160' rx='8' ry='8' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.4' />
+<text x='278' y='548' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>canary 期持续监控 SLO</text>
+<text x='278' y='575' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>成功率 &gt;= 99%</text>
+<text x='278' y='600' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>死信率 &lt;= 0.5%</text>
+<text x='278' y='625' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>P95 完成时间 &lt;= 120 s</text>
+<path d='M 1090 715 L 1382 715 L 1400 733 L 1400 795 L 1090 795 Z' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.1' />
+<polyline points='1382,715 1382,733 1400,733' fill='none' stroke='#7E8E9D' stroke-width='1.1' />
+<text x='1106' y='743' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>若任一指标连续违规超过 600 s，则自动回滚到 rollback_safe。</text>
+</svg>

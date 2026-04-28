@@ -1,0 +1,98 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>系统安全架构图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>认证、授权、设备密钥治理与存证边界</text>
+<path d='M 205 320 L 395 312' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 205 460 L 395 312' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 265 630 L 395 312' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 485 360 L 485 390' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 485 510 L 485 565' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 575 612 L 725 312' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 830 375 L 830 430' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 935 492 L 1090 340' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 935 312 L 1090 340' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 935 657 L 1330 345' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 830 375 L 830 610' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<rect x='60' y='190' width='240' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='60' y1='220' x2='300' y2='220' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='74' y='212' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>访问主体</text>
+<rect x='355' y='190' width='260' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='355' y1='220' x2='615' y2='220' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='369' y='212' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>接入与认证</text>
+<rect x='670' y='190' width='320' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='670' y1='220' x2='990' y2='220' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='684' y='212' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>核心服务</text>
+<rect x='1045' y='190' width='500' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='1045' y1='220' x2='1545' y2='220' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='1059' y='212' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>数据与存证</text>
+<circle cx='157.5' cy='286' r='18' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='157.5' y1='304' x2='157.5' y2='344' stroke='#2F6DB2' stroke-width='2' />
+<line x1='133.5' y1='318' x2='181.5' y2='318' stroke='#2F6DB2' stroke-width='2' />
+<line x1='157.5' y1='344' x2='137.5' y2='375' stroke='#2F6DB2' stroke-width='2' />
+<line x1='157.5' y1='344' x2='177.5' y2='375' stroke='#2F6DB2' stroke-width='2' />
+<text x='157.5' y='374' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>管理员</text>
+<circle cx='157.5' cy='426' r='18' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='157.5' y1='444' x2='157.5' y2='484' stroke='#2F6DB2' stroke-width='2' />
+<line x1='133.5' y1='458' x2='181.5' y2='458' stroke='#2F6DB2' stroke-width='2' />
+<line x1='157.5' y1='484' x2='137.5' y2='515' stroke='#2F6DB2' stroke-width='2' />
+<line x1='157.5' y1='484' x2='177.5' y2='515' stroke='#2F6DB2' stroke-width='2' />
+<text x='157.5' y='514' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>监管员</text>
+<rect x='80' y='575' width='185' height='110' rx='6' ry='6' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='98.0' y1='567' x2='98.0' y2='575' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='98.0' y1='685' x2='98.0' y2='693' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='147.66666666666666' y1='567' x2='147.66666666666666' y2='575' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='147.66666666666666' y1='685' x2='147.66666666666666' y2='693' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='197.33333333333331' y1='567' x2='197.33333333333331' y2='575' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='197.33333333333331' y1='685' x2='197.33333333333331' y2='693' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='247.0' y1='567' x2='247.0' y2='575' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='247.0' y1='685' x2='247.0' y2='693' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='72' y1='599.0' x2='80' y2='599.0' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='265' y1='599.0' x2='273' y2='599.0' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='72' y1='630.0' x2='80' y2='630.0' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='265' y1='630.0' x2='273' y2='630.0' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='72' y1='661.0' x2='80' y2='661.0' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='265' y1='661.0' x2='273' y2='661.0' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='100' y='609' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>边缘设备节点</text>
+<text x='100' y='636' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>ATECC608A 私钥硬件保护</text>
+<rect x='395' y='265' width='180' height='95' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='413' y='293' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>HTTPS / TLS</text>
+<text x='413' y='320' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>入口加密通道</text>
+<rect x='395' y='390' width='180' height='120' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='413' y='418' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>JWT HS256</text>
+<text x='413' y='445' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>iss / exp / roles</text>
+<text x='413' y='470' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>常时比较验签</text>
+<rect x='395' y='565' width='180' height='95' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='413' y='593' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>RBAC</text>
+<text x='413' y='620' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>Depends 统一拦截</text>
+<rect x='725' y='250' width='210' height='125' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='743' y='278' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>API 层</text>
+<text x='743' y='305' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>Ingest / Public Trace</text>
+<text x='743' y='330' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>Admin / Alerts</text>
+<rect x='725' y='430' width='210' height='125' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='743' y='458' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>验证服务</text>
+<text x='743' y='485' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>DB 优先查密钥</text>
+<text x='743' y='510' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>历史设备兼容回退 env key</text>
+<rect x='725' y='610' width='210' height='95' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='743' y='638' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>锚定引擎</text>
+<text x='743' y='665' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>Mock / EVM 适配器</text>
+<ellipse cx='1185.0' cy='302' rx='95.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='1090' y='302' width='190' height='76' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='1185.0' cy='378' rx='95.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1108' y='334' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>PostgreSQL</text>
+<text x='1108' y='361' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>managed_devices / keys</text>
+<text x='1108' y='386' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>events / alerts / audits</text>
+<path d='M 1380 365 C 1340 365, 1335 325, 1390 328 C 1400 295, 1455 295, 1472 325 C 1535 288, 1482 332, 1448 370 L 1380 365 Z' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1410.0' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>区块链网络</text>
+<text x='1410.0' y='373' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='middle'>EVM / Mock</text>
+<path d='M 1090 520 L 1472 520 L 1490 538 L 1490 640 L 1090 640 Z' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.1' />
+<polyline points='1472,520 1472,538 1490,538' fill='none' stroke='#A9B7C4' stroke-width='1.1' />
+<text x='1106' y='548' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>密钥治理策略：</text>
+<text x='1106' y='572' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>1. 一对一绑定</text>
+<text x='1106' y='596' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>2. 轮换保留历史验证能力</text>
+<text x='1106' y='620' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>3. 设备禁用后直接拒绝接入</text>
+<text x='1106' y='644' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>4. 全程写入 audits</text>
+</svg>

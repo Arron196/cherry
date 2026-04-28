@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-04-22T00:00:00.000Z" agent="Codex" version="25.0.2">
+  <diagram id="7ae703c5ce17" name="图3-5 安全架构">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="系统安全架构图" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontColor=#1F2D3D;" vertex="1" parent="1">
+          <mxGeometry x="52" y="34" width="860" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="认证、授权、设备密钥治理与存证边界" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#66788A;" vertex="1" parent="1">
+          <mxGeometry x="52" y="84" width="1200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="访问主体" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="240" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="接入与认证" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="355" y="190" width="260" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="核心服务" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="670" y="190" width="320" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="数据与存证" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1045" y="190" width="500" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:center'&gt;管理员&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:center'&gt;&lt;/div&gt;" style="shape=umlActor;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="10">
+          <mxGeometry x="110" y="260" width="95" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:center'&gt;监管员&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:center'&gt;&lt;/div&gt;" style="shape=umlActor;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="10">
+          <mxGeometry x="110" y="400" width="95" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;边缘设备节点&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;ATECC608A 私钥硬件保护&lt;/div&gt;" style="shape=mxgraph.electrical.int_ic;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="80" y="575" width="185" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;HTTPS / TLS&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;入口加密通道&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="395" y="265" width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;JWT HS256&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;iss / exp / roles&lt;br/&gt;常时比较验签&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="395" y="390" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;RBAC&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;Depends 统一拦截&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="395" y="565" width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;API 层&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;Ingest / Public Trace&lt;br/&gt;Admin / Alerts&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="725" y="250" width="210" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;验证服务&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;DB 优先查密钥&lt;br/&gt;历史设备兼容回退 env key&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="725" y="430" width="210" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;锚定引擎&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;Mock / EVM 适配器&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="12">
+          <mxGeometry x="725" y="610" width="210" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;PostgreSQL&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;managed_devices / keys&lt;br/&gt;events / alerts / audits&lt;/div&gt;" style="shape=mxgraph.flowchart.direct_data;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=14;spacingLeft=18;spacingRight=18;" vertex="1" parent="13">
+          <mxGeometry x="1090" y="280" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;区块链网络&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;EVM / Mock&lt;/div&gt;" style="shape=cloud;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=18;spacingLeft=20;spacingRight=20;" vertex="1" parent="13">
+          <mxGeometry x="1330" y="290" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;密钥治理策略：&lt;br/&gt;1. 一对一绑定&lt;br/&gt;2. 轮换保留历史验证能力&lt;br/&gt;3. 设备禁用后直接拒绝接入&lt;br/&gt;4. 全程写入 audits&lt;/div&gt;" style="shape=note;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#A9B7C4;strokeWidth=1.2;fontColor=#66788A;spacingTop=16;spacingLeft=16;spacingRight=16;" vertex="1" parent="13">
+          <mxGeometry x="1090" y="520" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="1000" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="14" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1001" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="15" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1002" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1003" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1004" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1005" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="19" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1006" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1007" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="21" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1008" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="20" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1009" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="22" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1010" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="20" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

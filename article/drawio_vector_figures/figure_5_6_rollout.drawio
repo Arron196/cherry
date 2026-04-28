@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-04-22T00:00:00.000Z" agent="Codex" version="25.0.2">
+  <diagram id="15324fbfca7a" name="图5-6 Rollout">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="四阶段 Rollout 策略图" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontColor=#1F2D3D;" vertex="1" parent="1">
+          <mxGeometry x="52" y="34" width="860" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="渐进上线阶段、SLO 监控与自动回滚回路" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#66788A;" vertex="1" parent="1">
+          <mxGeometry x="52" y="84" width="1200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="上线阶段" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="70" y="180" width="1370" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;rollback_safe&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;100% Mock&lt;br/&gt;零 Gas&lt;br/&gt;默认模式&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=10;fontColor=#1F2D3D;spacingTop=14;spacingLeft=16;spacingRight=16;" vertex="1" parent="10">
+          <mxGeometry x="120" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;shadow&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;主路径仍走 Mock&lt;br/&gt;副本并发发往 EVM&lt;br/&gt;只看日志与指标&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=10;fontColor=#1F2D3D;spacingTop=14;spacingLeft=16;spacingRight=16;" vertex="1" parent="10">
+          <mxGeometry x="450" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;canary&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;5% 真流量走 EVM&lt;br/&gt;95% 继续走 Mock&lt;br/&gt;风险面受控&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=10;fontColor=#1F2D3D;spacingTop=14;spacingLeft=16;spacingRight=16;" vertex="1" parent="10">
+          <mxGeometry x="780" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;full&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;100% EVM&lt;br/&gt;Mock 退出主路径&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=10;fontColor=#1F2D3D;spacingTop=14;spacingLeft=16;spacingRight=16;" vertex="1" parent="10">
+          <mxGeometry x="1110" y="260" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;canary 期持续监控 SLO&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;成功率 &amp;gt;= 99%&lt;br/&gt;死信率 &amp;lt;= 0.5%&lt;br/&gt;P95 完成时间 &amp;lt;= 120 s&lt;/div&gt;" style="shape=mxgraph.mockup.containers.rounded;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#A9B7C4;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=22;spacingLeft=22;spacingRight=22;" vertex="1" parent="1">
+          <mxGeometry x="260" y="520" width="780" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;若任一指标连续违规超过 600 s，则自动回滚到 rollback_safe。&lt;/div&gt;" style="shape=note;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.2;fontColor=#66788A;spacingTop=16;spacingLeft=16;spacingRight=16;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="715" width="310" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="1000" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1001" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1002" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1003" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="13" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1004" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1005" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="755" />
+              <mxPoint x="200" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

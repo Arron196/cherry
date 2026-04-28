@@ -1,0 +1,105 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>核心数据表 ER 关系图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>核心实体、主外键关系与逻辑关联</text>
+<path d='M 215 360 L 215 420' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<text x='223' y='410' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#2F6DB2'>1:N</text>
+<path d='M 720 372 L 775 347' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<text x='783' y='337' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#2F6DB2'>N:1</text>
+<path d='M 930 460 L 590 560' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 930 460 L 900 560' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 1085 347 L 1190 312' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 1085 347 L 1190 505' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 930 460 L 1340 620' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 350 300 L 560 155 L 930 235' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='10 7' marker-end='url(#arrow-2F6DB2)' />
+<text x='568' y='145' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#2F6DB2'>device_id 逻辑关联</text>
+<rect x='50' y='170' width='330' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='50' y1='200' x2='380' y2='200' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='64' y='192' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>设备治理域</text>
+<rect x='400' y='170' width='720' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='400' y1='200' x2='1120' y2='200' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='414' y='192' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>事件与处理域</text>
+<rect x='1140' y='170' width='410' height='560' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='1140' y1='200' x2='1550' y2='200' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='1154' y='192' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>锚定与审计域</text>
+<ellipse cx='215.0' cy='262' rx='135.0' ry='22' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<rect x='80' y='262' width='270' height='76' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<ellipse cx='215.0' cy='338' rx='135.0' ry='22' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='98' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>managed_devices</text>
+<text x='98' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='98' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>UNIQUE device_id</text>
+<text x='98' y='371' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>status / disabled_at</text>
+<ellipse cx='215.0' cy='442' rx='135.0' ry='22' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<rect x='80' y='442' width='270' height='101' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<ellipse cx='215.0' cy='543' rx='135.0' ry='22' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='98' y='474' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>managed_device_keys</text>
+<text x='98' y='501' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='98' y='526' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK device_id -&gt; managed_devices.id</text>
+<text x='98' y='551' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>UNIQUE key_id</text>
+<text x='98' y='576' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>algorithm / status</text>
+<ellipse cx='580.0' cy='307' rx='140.0' ry='22' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<rect x='440' y='307' width='280' height='131' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<ellipse cx='580.0' cy='438' rx='140.0' ry='22' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='458' y='339' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>ingest_requests</text>
+<text x='458' y='366' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='458' y='391' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>UNIQUE idempotency_key</text>
+<text x='458' y='416' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>payload_hash</text>
+<text x='458' y='441' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>ingest_status / retry_count</text>
+<text x='458' y='466' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id -&gt; events.id</text>
+<ellipse cx='930.0' cy='257' rx='155.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='775' y='257' width='310' height='181' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='930.0' cy='438' rx='155.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='793' y='289' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>events</text>
+<text x='793' y='316' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='793' y='341' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>device_id / batch_id / timestamp</text>
+<text x='793' y='366' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>sensor_payload / signature_envelope</text>
+<text x='793' y='391' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>UNIQUE canonical_hash</text>
+<ellipse cx='590.0' cy='582' rx='120.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='470' y='582' width='240' height='76' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='590.0' cy='658' rx='120.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='488' y='614' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>quality_results</text>
+<text x='488' y='641' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='488' y='666' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id</text>
+<text x='488' y='691' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>check_name / score</text>
+<text x='488' y='716' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>status</text>
+<ellipse cx='900.0' cy='582' rx='110.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='790' y='582' width='220' height='76' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='900.0' cy='658' rx='110.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='808' y='614' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>alerts</text>
+<text x='808' y='641' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='808' y='666' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id</text>
+<text x='808' y='691' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>alert_type / severity</text>
+<text x='808' y='716' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>status</text>
+<ellipse cx='1340.0' cy='262' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='1190' y='262' width='300' height='101' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='1340.0' cy='363' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1208' y='294' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>anchor_submissions</text>
+<text x='1208' y='321' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='1208' y='346' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id</text>
+<text x='1208' y='371' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>transaction_hash</text>
+<text x='1208' y='396' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>canonical_hash</text>
+<text x='1208' y='421' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>status</text>
+<ellipse cx='1340.0' cy='457' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='1190' y='457' width='300' height='96' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='1340.0' cy='553' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1208' y='489' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>anchor_receipts</text>
+<text x='1208' y='516' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='1208' y='541' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id</text>
+<text x='1208' y='566' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>network</text>
+<text x='1208' y='591' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>transaction_hash</text>
+<text x='1208' y='616' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>receipt_payload</text>
+<ellipse cx='1340.0' cy='642' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<rect x='1190' y='642' width='300' height='66' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<ellipse cx='1340.0' cy='708' rx='150.0' ry='22' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1208' y='674' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>audits</text>
+<text x='1208' y='701' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>PK id</text>
+<text x='1208' y='726' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>FK event_id</text>
+<text x='1208' y='751' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>actor / action / target</text>
+<path d='M 260 780 L 1322 780 L 1340 798 L 1340 850 L 260 850 Z' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.1' />
+<polyline points='1322,780 1322,798 1340,798' fill='none' stroke='#A9B7C4' stroke-width='1.1' />
+<text x='276' y='808' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>双层幂等：ingest_requests.idempotency_key 处理请求重放，events.canonical_hash 处理内容重复。</text>
+</svg>

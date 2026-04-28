@@ -1,0 +1,62 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>电源管理原理框图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>混合供电链路与低功耗策略</text>
+<path d='M 310 300 L 440 400' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 310 500 L 440 400' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 690 400 L 810 302' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 690 400 L 810 500' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 1040 302 L 1160 420' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 1060 500 L 1160 420' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<rect x='90' y='250' width='220' height='100' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='108' y='278' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>10W 太阳能板</text>
+<text x='108' y='305' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>有光照时为系统补能</text>
+<rect x='90' y='445' width='220' height='110' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='108' y='473' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>18650 电池</text>
+<text x='108' y='500' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>3.7V / 3000mAh</text>
+<text x='108' y='525' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>夜间与阴天主供电</text>
+<rect x='440' y='330' width='250' height='140' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='458' y='358' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>MPPT 充电控制器</text>
+<text x='458' y='385' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>太阳能充电管理</text>
+<text x='458' y='410' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>兼顾充放电保护</text>
+<rect x='810' y='255' width='230' height='95' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='828' y='283' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>5V 电源轨</text>
+<text x='828' y='310' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>供给 MH-Z19B 等 5V 负载</text>
+<rect x='810' y='445' width='250' height='110' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='828' y='473' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>3.3V 电源轨</text>
+<text x='828' y='500' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>AMS1117-3.3 输出</text>
+<text x='828' y='525' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>供 MCU / 传感器 / 无线模组</text>
+<rect x='1160' y='230' width='320' height='300' rx='8' ry='8' fill='#FFFFFF' stroke='#D7E3EC' stroke-width='1.4' />
+<line x1='1160' y1='260' x2='1480' y2='260' stroke='#D7E3EC' stroke-width='1' opacity='0.35' />
+<text x='1174' y='252' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>系统负载</text>
+<rect x='1200' y='285' width='110' height='95' rx='6' ry='6' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1218.0' y1='277' x2='1218.0' y2='285' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1218.0' y1='380' x2='1218.0' y2='388' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1242.6666666666667' y1='277' x2='1242.6666666666667' y2='285' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1242.6666666666667' y1='380' x2='1242.6666666666667' y2='388' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1267.3333333333333' y1='277' x2='1267.3333333333333' y2='285' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1267.3333333333333' y1='380' x2='1267.3333333333333' y2='388' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1292.0' y1='277' x2='1292.0' y2='285' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1292.0' y1='380' x2='1292.0' y2='388' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1192' y1='309.0' x2='1200' y2='309.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1310' y1='309.0' x2='1318' y2='309.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1192' y1='332.5' x2='1200' y2='332.5' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1310' y1='332.5' x2='1318' y2='332.5' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1192' y1='356.0' x2='1200' y2='356.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='1310' y1='356.0' x2='1318' y2='356.0' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='1220' y='319' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>STM32H743</text>
+<rect x='1330' y='285' width='110' height='95' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='1348' y='313' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>SHT31 /
+ATECC608A</text>
+<rect x='1200' y='405' width='110' height='95' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='1218' y='433' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>ESP8266</text>
+<rect x='1330' y='405' width='110' height='95' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1348' y='433' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>SX1278</text>
+<path d='M 180 720 L 1382 720 L 1400 738 L 1400 790 L 180 790 Z' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.1' />
+<polyline points='1382,720 1382,738 1400,738' fill='none' stroke='#A9B7C4' stroke-width='1.1' />
+<text x='196' y='748' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>低功耗策略：Tickless Idle + Stop 模式 + 外设时钟门控 + ESP8266 深度睡眠 + SX1278 休眠待命。</text>
+</svg>

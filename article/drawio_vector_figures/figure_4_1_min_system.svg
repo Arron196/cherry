@@ -1,0 +1,58 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>STM32H743 最小系统原理框图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>主控、电源、时钟、复位与调试接口关系</text>
+<path d='M 350 330 L 585 390' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 350 532 L 585 390' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 765 200 L 765 245' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 945 390 L 1140 305' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 945 390 L 1120 497' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<rect x='90' y='260' width='260' height='140' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='108' y='288' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>电源去耦</text>
+<text x='108' y='315' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>5V -&gt; AMS1117-3.3</text>
+<text x='108' y='340' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>VDD / VDDA: 100nF + 10uF</text>
+<text x='108' y='365' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>VDDA: 2.2uH + 10uF</text>
+<rect x='90' y='470' width='260' height='125' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='108' y='498' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>复位 / BOOT0</text>
+<text x='108' y='525' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>NRST: 100nF + 按键</text>
+<text x='108' y='550' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>BOOT0: 10k 下拉至 GND</text>
+<rect x='585' y='245' width='360' height='290' rx='6' ry='6' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='603.0' y1='237' x2='603.0' y2='245' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='603.0' y1='535' x2='603.0' y2='543' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='711.0' y1='237' x2='711.0' y2='245' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='711.0' y1='535' x2='711.0' y2='543' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='819.0' y1='237' x2='819.0' y2='245' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='819.0' y1='535' x2='819.0' y2='543' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='927.0' y1='237' x2='927.0' y2='245' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='927.0' y1='535' x2='927.0' y2='543' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='577' y1='269.0' x2='585' y2='269.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='945' y1='269.0' x2='953' y2='269.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='577' y1='390.0' x2='585' y2='390.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='945' y1='390.0' x2='953' y2='390.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='577' y1='511.0' x2='585' y2='511.0' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='945' y1='511.0' x2='953' y2='511.0' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='605' y='279' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>STM32H743VIT6</text>
+<text x='605' y='306' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>LQFP-100</text>
+<text x='605' y='331' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>480 MHz Cortex-M7</text>
+<text x='605' y='356' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>3.3V 单电源</text>
+<text x='605' y='381' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>I2C / UART / SPI / HASH</text>
+<rect x='610' y='120' width='310' height='80' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='628' y='148' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>8 MHz 外部晶振</text>
+<text x='628' y='175' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>HSE 8MHz + 22pF</text>
+<rect x='1140' y='250' width='300' height='110' rx='8' ry='8' fill='#EDF4FB' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='1158' y='278' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>SWD 调试接口</text>
+<text x='1158' y='305' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>SWDIO / SWDCLK / GND</text>
+<text x='1158' y='330' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>ST-Link 在线调试</text>
+<rect x='1120' y='425' width='340' height='145' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='1138' y='453' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>外设总线引出</text>
+<text x='1138' y='480' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>I2C1: SHT31 + ATECC608A</text>
+<text x='1138' y='505' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>USART: 传感器 / Wi-Fi</text>
+<text x='1138' y='530' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>SPI1: SX1278</text>
+<path d='M 250 760 L 1282 760 L 1300 778 L 1300 820 L 250 820 Z' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.1' />
+<polyline points='1282,760 1282,778 1300,778' fill='none' stroke='#A9B7C4' stroke-width='1.1' />
+<text x='266' y='788' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>图中突出系统组成与连接关系；若需电气级细节，应另附 CAD 原理图。</text>
+</svg>

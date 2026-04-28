@@ -1,0 +1,75 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='920' viewBox='0 0 1600 920'>
+<rect width='1600' height='920' fill='#FFFFFF' />
+<defs>
+<marker id='arrow-2F6DB2' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#2F6DB2' /></marker>
+<marker id='arrow-7E8E9D' viewBox='0 0 10 10' refX='8' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M 0 0 L 10 5 L 0 10 z' fill='#7E8E9D' /></marker>
+</defs>
+<text x='52' y='58' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='26' font-weight='700' fill='#1F2D3D'>签名验证流程图</text>
+<text x='52' y='90' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='14' fill='#66788A'>签名、密钥来源与兼容回退验证路径</text>
+<path d='M 200 295 L 200 360' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 300 407 L 420 315' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 680 315 L 810 345' fill='none' stroke='#2F6DB2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-2F6DB2)' />
+<path d='M 980 345 L 1180 340' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<text x='1188' y='330' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#7E8E9D'>否</text>
+<path d='M 895 405 L 550 650' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<text x='558' y='640' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#7E8E9D'>是</text>
+<path d='M 550 375 L 550 470' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' stroke-dasharray='10 7' marker-end='url(#arrow-7E8E9D)' />
+<text x='558' y='460' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#7E8E9D'>未注册</text>
+<path d='M 550 590 L 550 650' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 680 695 L 800 625' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 895 675 L 895 705' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<path d='M 980 765 L 1250 765 L 1250 405 L 1270 375' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<text x='1258' y='395' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#7E8E9D'>否</text>
+<path d='M 980 765 L 1160 725' fill='none' stroke='#7E8E9D' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' marker-end='url(#arrow-7E8E9D)' />
+<text x='1168' y='715' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='15' fill='#7E8E9D'>是</text>
+<rect x='70' y='170' width='260' height='620' rx='8' ry='8' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.4' />
+<line x1='70' y1='208' x2='330' y2='208' stroke='#A9B7C4' stroke-width='1' opacity='0.45' />
+<text x='86' y='194' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>请求入口</text>
+<rect x='360' y='170' width='380' height='620' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<line x1='360' y1='208' x2='740' y2='208' stroke='#2F6DB2' stroke-width='1' opacity='0.45' />
+<text x='376' y='194' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>密钥解析与哈希</text>
+<rect x='770' y='170' width='300' height='620' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='770' y1='208' x2='1070' y2='208' stroke='#7E8E9D' stroke-width='1' opacity='0.45' />
+<text x='786' y='194' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>验证决策</text>
+<rect x='1100' y='170' width='360' height='620' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<line x1='1100' y1='208' x2='1460' y2='208' stroke='#7E8E9D' stroke-width='1' opacity='0.45' />
+<text x='1116' y='194' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>结果</text>
+<rect x='120' y='235' width='160' height='60' rx='30' ry='30' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='200.0' y='271.0' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>开始</text>
+<rect x='100' y='360' width='200' height='95' rx='8' ry='8' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.4' />
+<text x='118' y='388' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>提取信封</text>
+<text x='118' y='415' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>algorithm / key_id /</text>
+<text x='118' y='440' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>signature / public_key</text>
+<rect x='420' y='255' width='260' height='120' rx='8' ry='8' fill='#FFFFFF' stroke='#2F6DB2' stroke-width='1.4' />
+<text x='438' y='283' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>查询 managed_device_keys</text>
+<text x='438' y='310' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>校验 device_id + key_id</text>
+<text x='438' y='335' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>确认设备未禁用</text>
+<text x='438' y='360' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>算法必须匹配</text>
+<rect x='420' y='470' width='260' height='120' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='438' y='498' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>兼容回退</text>
+<text x='438' y='525' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>仅当设备未注册时</text>
+<text x='438' y='550' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>回退 INGEST_SIGNING_KEYS</text>
+<text x='438' y='575' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>只支持 HMAC</text>
+<rect x='420' y='650' width='260' height='90' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='438' y='678' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>重新计算 canonical_hash</text>
+<text x='438' y='705' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>对业务数据执行规范化算法</text>
+<polygon points='895.0,285 980,345.0 895.0,405 810,345.0' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='895.0' y='327' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>DB 中有
+活动密钥?</text>
+<rect x='800' y='575' width='190' height='100' rx='8' ry='8' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='818' y='603' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='start'>执行签名验证</text>
+<text x='818' y='630' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>ECDSA-P256 或</text>
+<text x='818' y='655' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='17' fill='#1F2D3D' text-anchor='start'>HMAC-SHA256</text>
+<polygon points='895.0,705 980,765.0 895.0,825 810,765.0' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='895.0' y='747' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>签名 / MAC
+有效?</text>
+<rect x='1180' y='305' width='180' height='70' rx='35' ry='35' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1270.0' y='346.0' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>401 Unauthorized</text>
+<rect x='1160' y='690' width='220' height='70' rx='35' ry='35' fill='#FFFFFF' stroke='#7E8E9D' stroke-width='1.4' />
+<text x='1270.0' y='731.0' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='19' font-weight='700' fill='#1F2D3D' text-anchor='middle'>进入后续入库 / 幂等处理</text>
+<path d='M 1135 470 L 1407 470 L 1425 488 L 1425 590 L 1135 590 Z' fill='#FFFFFF' stroke='#A9B7C4' stroke-width='1.1' />
+<polyline points='1407,470 1407,488 1425,488' fill='none' stroke='#A9B7C4' stroke-width='1.1' />
+<text x='1151' y='498' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>关键规则：</text>
+<text x='1151' y='522' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>设备已注册但密钥不匹配，直接拒绝；</text>
+<text x='1151' y='546' font-family='Microsoft YaHei, PingFang SC, sans-serif' font-size='16' fill='#66788A' text-anchor='start'>只有“设备尚未注册”时才允许走兼容回退。</text>
+</svg>

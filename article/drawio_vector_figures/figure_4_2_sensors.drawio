@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-04-22T00:00:00.000Z" agent="Codex" version="25.0.2">
+  <diagram id="50776a052b75" name="图4-2 总线连接">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="多传感器接口与总线连接图" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=30;fontStyle=1;fontColor=#1F2D3D;" vertex="1" parent="1">
+          <mxGeometry x="52" y="34" width="860" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="I2C、UART 与 SPI 总线分工" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#66788A;" vertex="1" parent="1">
+          <mxGeometry x="52" y="84" width="1200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="I2C 域" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="350" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="串口域" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="60" y="545" width="350" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;STM32H743&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;I2C1 / I2C2&lt;br/&gt;USART1 / USART2&lt;br/&gt;SPI1&lt;br/&gt;HASH&lt;/div&gt;" style="shape=mxgraph.electrical.int_ic;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="1">
+          <mxGeometry x="610" y="245" width="320" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="无线模块" style="swimlane;html=1;rounded=1;startSize=30;fillColor=#FFFFFF;strokeColor=#D7E3EC;strokeWidth=1.5;fontStyle=1;horizontal=0;whiteSpace=wrap;container=1;collapsible=0;fontColor=#1F2D3D;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="180" width="380" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;SHT31&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;I2C1 / 0x44&lt;br/&gt;PB8 / PB9&lt;br/&gt;CRC 校验&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="100" y="235" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;ATECC608A&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;I2C1 / 0x60&lt;br/&gt;Never-Read 私钥&lt;br/&gt;执行 ECDSA Sign&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="10">
+          <mxGeometry x="100" y="390" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;MH-Z19B&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;USART1 / 9600 8N1&lt;br/&gt;5V 供电&lt;br/&gt;预热 3 分钟&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="11">
+          <mxGeometry x="100" y="600" width="250" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;ESP8266&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;USART2 / 115200&lt;br/&gt;AT + HTTPS&lt;br/&gt;主上传通道&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#EDF4FB;strokeColor=#2F6DB2;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="13">
+          <mxGeometry x="1140" y="255" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="&lt;div style='font-family:Microsoft YaHei;font-size:20px;font-weight:700;color:#1F2D3D;margin-bottom:6px;text-align:left'&gt;SX1278&lt;/div&gt;&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;SPI1 + GPIO&lt;br/&gt;433MHz&lt;br/&gt;备用链路&lt;/div&gt;" style="rounded=1;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#7E8E9D;strokeWidth=1.5;arcSize=8;fontColor=#1F2D3D;spacingTop=18;spacingLeft=18;spacingRight=18;" vertex="1" parent="13">
+          <mxGeometry x="1140" y="430" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="&lt;div style='font-family:Microsoft YaHei;font-size:18px;color:#1F2D3D;line-height:1.35;text-align:left'&gt;总线设计要点：&lt;br/&gt;I2C1 共享但地址不同；UART 直接 3.3V 连接；LoRa 需要额外 NSS / RESET / DIO0。&lt;/div&gt;" style="shape=note;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#A9B7C4;strokeWidth=1.2;fontColor=#66788A;spacingTop=16;spacingLeft=16;spacingRight=16;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="665" width="380" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="1000" value="I2C1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="14" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1001" value="I2C1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="15" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1002" value="USART1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="16" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1003" value="USART2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#2F6DB2;strokeWidth=2.2;fontSize=14;fontColor=#2F6DB2;" edge="1" parent="1" source="12" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1004" value="SPI1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#7E8E9D;strokeWidth=2.2;fontSize=14;fontColor=#7E8E9D;" edge="1" parent="1" source="12" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
