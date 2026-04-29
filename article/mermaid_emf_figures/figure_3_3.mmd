@@ -1,0 +1,36 @@
+flowchart LR
+  subgraph G1[设备治理域]
+    devices[(managed_devices\nPK id\nUNIQUE device_id\nstatus / disabled_at)]
+    keys[(managed_device_keys\nPK id\nFK device_id -> managed_devices.id\nUNIQUE key_id\nalgorithm / status)]
+  end
+
+  subgraph G2[事件与处理域]
+    ingest[(ingest_requests\nPK id\nUNIQUE idempotency_key\npayload_hash\ningest_status / retry_count\nFK event_id -> events.id)]
+    events[(events\nPK id\ndevice_id / batch_id / timestamp\nsensor_payload / signature_envelope\nUNIQUE canonical_hash)]
+    quality[(quality_results\nPK id\nFK event_id\ncheck_name / score\nstatus)]
+    alerts[(alerts\nPK id\nFK event_id\nalert_type / severity\nstatus)]
+  end
+
+  subgraph G3[锚定与审计域]
+    subs[(anchor_submissions\nPK id\nFK event_id\ntransaction_hash\ncanonical_hash\nstatus)]
+    receipts[(anchor_receipts\nPK id\nFK event_id\nnetwork\ntransaction_hash\nreceipt_payload)]
+    audits[(audits\nPK id\nFK event_id\nactor / action / target)]
+  end
+
+  note[双层幂等：ingest_requests.idempotency_key 处理请求重放，events.canonical_hash 处理内容重复。]
+
+  devices -->|1:N| keys
+  ingest -->|N:1| events
+  devices -. device_id 逻辑关联 .-> events
+  events --> quality
+  events --> alerts
+  events --> subs
+  events --> receipts
+  events --> audits
+  ingest -.-> note
+  events -.-> note
+
+  classDef db fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef note fill:#FFF7ED,stroke:#F97316,color:#1F2D3D,stroke-width:1.4px;
+  class devices,keys,ingest,events,quality,alerts,subs,receipts,audits db;
+  class note note;

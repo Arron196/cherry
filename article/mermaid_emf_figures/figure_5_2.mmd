@@ -1,0 +1,19 @@
+flowchart LR
+  input[输入事件 JSON\ndevice_id: node-01\nbatch_id: CH2026-0008\ntemperature: 2.1\nhumidity: 88\nco2: 620\ntimestamp: 2026-03-28T08:30:00+08:00\nmeta: 冷库A / warehouse]
+  s1[01 字段递归排序\n对象键按字典序稳定排序]
+  s2[02 时间标准化\n统一转为 UTC ISO8601]
+  s3[03 字符串 trim\n去除前后空白与无效换行]
+  s4[04 ASCII 转义\n非 ASCII 字符统一 unicode 转义]
+  s5[05 紧凑序列化\n使用无空格分隔符]
+  s6[06 SHA-256 哈希\n得到 64 位十六进制摘要]
+  output[输出 canonical_hash\n9f4f3bb18f1b0a9d...\n3e1204b7f5a6c261...\n1f8f4fd22fb6d7aa]
+  goal[一致性目标\nPython 后端 = TypeScript 前端\n相同事件 -> 相同哈希\n用于幂等与链上锚定]
+
+  input --> s1 --> s2 --> s3 --> s4 --> s5 --> s6 --> output --> goal
+
+  classDef input fill:#EFF6FF,stroke:#2563EB,color:#1F2D3D,stroke-width:1.6px;
+  classDef step fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef output fill:#ECFDF5,stroke:#16A34A,color:#1F2D3D,stroke-width:1.6px;
+  class input input;
+  class s1,s2,s3,s4,s5,s6 step;
+  class output,goal output;

@@ -1,0 +1,20 @@
+flowchart LR
+  r0[rollback_safe\n100% Mock\n零 Gas\n默认模式]
+  r1[shadow\n主路径仍走 Mock\n副本并发发往 EVM\n只看日志与指标]
+  r2[canary\n5% 真流量走 EVM\n95% 继续走 Mock\n风险面受控]
+  r3[full\n100% EVM\nMock 退出主路径]
+  metrics[canary 期持续监控 SLO\n成功率 >= 99%\n死信率 <= 0.5%\nP95 完成时间 <= 120 s]
+  rollback[自动回滚\n任一指标连续违规超过 600 s\n回到 rollback_safe]
+
+  r0 --> r1 --> r2 --> r3
+  r2 --> metrics --> rollback
+  rollback -. 降级保护 .-> r0
+
+  classDef safe fill:#ECFDF5,stroke:#16A34A,color:#1F2D3D,stroke-width:1.6px;
+  classDef stage fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef canary fill:#FFF7ED,stroke:#F97316,color:#1F2D3D,stroke-width:1.6px;
+  classDef bad fill:#FEE2E2,stroke:#DC2626,color:#1F2D3D,stroke-width:1.6px;
+  class r0 safe;
+  class r1,r3 stage;
+  class r2,metrics canary;
+  class rollback bad;

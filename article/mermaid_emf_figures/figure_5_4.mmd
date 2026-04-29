@@ -1,0 +1,33 @@
+flowchart TD
+  start([开始])
+  extract[提取 signature_envelope\nalgorithm / key_id\nsignature / public_key]
+  lookup[查询 managed_device_keys\n校验 device_id + key_id\n确认设备未禁用\n算法必须匹配]
+  dbkey{DB 中有活动密钥?}
+  fallback[兼容回退\n仅当设备未注册时\n回退 INGEST_SIGNING_KEYS\n只支持 HMAC]
+  reject([401 Unauthorized])
+  hash[重新计算 canonical_hash\n对业务数据执行规范化算法]
+  verify[执行签名验证\nECDSA-P256 或 HMAC-SHA256]
+  valid{签名 / MAC 有效?}
+  ingest([进入后续入库 / 幂等处理])
+  rule[关键规则：设备已注册但密钥不匹配直接拒绝；只有“设备尚未注册”时才允许兼容回退。]
+
+  start --> extract --> lookup --> dbkey
+  dbkey -->|是| hash
+  dbkey -->|否| reject
+  lookup -. 未注册 .-> fallback --> hash
+  hash --> verify --> valid
+  valid -->|是| ingest
+  valid -->|否| reject
+  fallback -.-> rule
+  reject -.-> rule
+
+  classDef ok fill:#ECFDF5,stroke:#16A34A,color:#1F2D3D,stroke-width:1.6px;
+  classDef step fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef warn fill:#FEF3C7,stroke:#F59E0B,color:#1F2D3D,stroke-width:1.6px;
+  classDef bad fill:#FEE2E2,stroke:#DC2626,color:#1F2D3D,stroke-width:1.6px;
+  classDef note fill:#F8FCFE,stroke:#A9B7C4,color:#1F2D3D;
+  class start,ingest ok;
+  class extract,lookup,hash,verify step;
+  class dbkey,valid,fallback warn;
+  class reject bad;
+  class rule note;

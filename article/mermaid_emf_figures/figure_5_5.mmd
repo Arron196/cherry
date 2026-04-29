@@ -1,0 +1,29 @@
+sequenceDiagram
+  autonumber
+  participant AW as anchor_worker
+  participant DB as 数据库
+  participant AD as AnchorAdapter
+  participant EVM as EVM 节点
+  participant RW as retry_worker
+
+  AW->>DB: 查询 RECEIVED 事件
+  DB-->>AW: 返回待锚定事件
+  AW->>DB: 写入 PENDING submission
+  AW->>AD: adapter.anchor_event()
+  AD->>EVM: 提交交易 / 获取 tx_hash
+  EVM-->>AD: 返回 tx_hash
+  AD->>DB: 保存 tx_hash + status=PENDING
+  AW->>AD: 轮询 get_receipt()
+  AD->>EVM: 查询 receipt / confirmations
+  EVM-->>AD: 返回 receipt
+  AD->>DB: FINALIZED 或 REORGED
+
+  alt 锚定异常或确认超时
+    AW->>DB: 事件状态置为 FAILED_RETRYING
+    RW->>DB: 取出重试任务
+    RW->>AW: retry_count < 3 时再次提交
+  else 超过重试阈值
+    RW->>DB: 转入 DEAD_LETTER 并告警
+  end
+
+  Note over AW,DB: 提交交易前先写入 PENDING submission record；服务崩溃重启后可继续轮询同一 transaction_hash，避免重复上链。

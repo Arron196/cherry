@@ -1,0 +1,26 @@
+flowchart LR
+  subgraph CFG[安全芯片配置]
+    slot[ATECC608A 槽位策略\nSlot 0: ECDSA P-256 私钥\nNever-Read，仅允许 Sign\nConfig Lock + Data Lock]
+    i2c[I2C 命令时序\nWakeup -> 命令帧\nLength / OpCode / Param / Data / CRC16\n等待执行 -> 读响应 -> Sleep]
+  end
+
+  f1[1 数据帧构造\nSensorTask 采集并组装 JSON]
+  f2[2 摘要计算\n规范化序列化\nHASH-SHA256]
+  f3[3 芯片签名\nWakeup -> Sign 指令 0x41\n等待 tEXEC\n取回 64B 签名值 r,s]
+  f4[4 DER 编码\n原始 r,s\n转 ASN.1 DER]
+  f5[5 上传\nsignature_envelope\n经 HTTPS 发送]
+  note[性能备注：ATECC608A 签名实测约 7 ms；从采集到封装上传整个路径约 15~25 ms。]
+
+  slot --> f3
+  i2c --> f3
+  f1 --> f2 --> f3 --> f4 --> f5
+  f3 -.-> note
+
+  classDef cfg fill:#F8FCFE,stroke:#D7E3EC,color:#1F2D3D;
+  classDef step fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef secure fill:#F5F3FF,stroke:#7C3AED,color:#1F2D3D,stroke-width:1.6px;
+  classDef note fill:#FFF7ED,stroke:#F97316,color:#1F2D3D;
+  class slot,i2c cfg;
+  class f1,f2,f4,f5 step;
+  class f3 secure;
+  class note note;

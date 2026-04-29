@@ -1,0 +1,30 @@
+sequenceDiagram
+  autonumber
+  participant C as 客户端
+  participant API as API / ingest
+  participant IR as ingest_requests
+  participant EV as events
+  participant R as 响应
+
+  C->>API: POST /v1/events + idempotency_key
+  API->>IR: 查询 idempotency_key 是否存在
+  alt 命中 idempotency_key
+    IR-->>API: 返回已有 event_id
+    API-->>R: 200 OK / 返回已有记录
+  else 未命中
+    IR-->>API: 不存在，继续处理
+    API->>API: 计算 canonical_hash
+    API->>EV: 尝试 INSERT events(canonical_hash)
+    alt canonical_hash 唯一
+      EV-->>API: 写入成功
+      API->>IR: 记录 idempotency_key -> event_id
+      API-->>R: 201 Created
+    else canonical_hash 冲突
+      EV-->>API: IntegrityError
+      API->>EV: 回查已有事件
+      API->>IR: 补记 idempotency_key -> existing event_id
+      API-->>R: 200 OK / 返回已有记录
+    end
+  end
+
+  Note over IR,EV: UNIQUE(idempotency_key) 防重放；UNIQUE(canonical_hash) 防内容重复。\n采用“乐观写入 + IntegrityError 捕获 + 回查”，避免先查后写的竞态窗口。

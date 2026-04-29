@@ -1,0 +1,41 @@
+flowchart LR
+  subgraph BOOT[Boot / Init]
+    init[系统初始化\nHAL / Clock / 外设 Init\n创建任务与队列]
+    sched[调度启动\nvTaskStartScheduler]
+  end
+
+  subgraph SENSOR[SensorTask]
+    sensor[采集一帧\n30 s 周期\n前 3 分钟 CO2 = -1]
+    q1[(sensorQueue\n深度 4)]
+  end
+
+  subgraph SIGN[SignTask]
+    sign[签名流水\n规范化 -> SHA-256\nATECC608A Sign\nDER 编码]
+    q2[(signedQueue\n深度 4)]
+  end
+
+  subgraph COMM[CommTask]
+    comm[上传决策\n优先 Wi-Fi\n失败后切 LoRa]
+  end
+
+  subgraph NET[外设 / 网络]
+    wifi[ESP8266 HTTPS]
+    lora[SX1278 LoRa]
+  end
+
+  hint[采集、签名与通信通过队列解耦；空闲阶段可进入低功耗模式。]
+
+  init --> sched --> sensor --> q1 --> sign --> q2 --> comm
+  comm --> wifi
+  comm -. 备用链路 .-> lora
+  q1 -. 解耦 .-> hint
+  q2 -. 背压缓冲 .-> hint
+
+  classDef process fill:#FFFFFF,stroke:#2F6DB2,color:#1F2D3D,stroke-width:1.6px;
+  classDef queue fill:#FEF3C7,stroke:#F59E0B,color:#1F2D3D,stroke-width:1.6px;
+  classDef net fill:#ECFDF5,stroke:#16A34A,color:#1F2D3D,stroke-width:1.6px;
+  classDef note fill:#F8FCFE,stroke:#A9B7C4,color:#1F2D3D;
+  class init,sched,sensor,sign,comm process;
+  class q1,q2 queue;
+  class wifi,lora net;
+  class hint note;

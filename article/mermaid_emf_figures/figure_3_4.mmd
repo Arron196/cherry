@@ -1,0 +1,27 @@
+stateDiagram-v2
+  direction LR
+  [*] --> RECEIVED: 事件接收
+  RECEIVED --> ANCHORING: 开始锚定
+  ANCHORING --> ANCHORED: 成功确认
+  ANCHORING --> FAILED_RETRYING: 失败且 retry < 3
+  FAILED_RETRYING --> RECEIVED: retry_worker 重新触发
+  FAILED_RETRYING --> DEAD_LETTER: retry >= 3
+  DEAD_LETTER --> RECEIVED: 管理员 requeue
+  RECEIVED --> RECEIVED: 命中 idempotency_key / canonical_hash\n直接返回已有记录
+
+  note right of RECEIVED
+    已接收 / 待处理
+    幂等旁路不重复入状态机
+  end note
+  note right of ANCHORING
+    提交锚定 / 等待确认
+    anchor_worker 轮询 receipt
+  end note
+  note right of FAILED_RETRYING
+    可恢复失败 / 等待重试
+    告警联动与退避重试
+  end note
+  note right of DEAD_LETTER
+    不可恢复失败
+    人工排查后可回收
+  end note
