@@ -1,0 +1,48 @@
+#ifndef TRACE_UPLOAD_CONFIG_H
+#define TRACE_UPLOAD_CONFIG_H
+
+#ifndef TRACE_UPLOAD_HOST
+#define TRACE_UPLOAD_HOST "54.39.105.79"
+#endif
+
+#ifndef TRACE_UPLOAD_PORT
+#define TRACE_UPLOAD_PORT 18941
+#endif
+
+#ifndef TRACE_UPLOAD_USE_SSL
+#if TRACE_UPLOAD_PORT == 443
+#define TRACE_UPLOAD_USE_SSL 1
+#else
+#define TRACE_UPLOAD_USE_SSL 0
+#endif
+#endif
+
+#ifndef TRACE_DEVICE_ID_JSON
+#define TRACE_DEVICE_ID_JSON "\\u6d4b\\u8bd5\\u7684\\u5d4c\\u5165\\u5f0f\\u8bbe\\u5907"
+#endif
+
+#ifndef TRACE_DEVICE_KEY_ID
+#define TRACE_DEVICE_KEY_ID "class_test-1"
+#endif
+
+#ifndef TRACE_DEVICE_SECRET
+#define TRACE_DEVICE_SECRET ""
+#endif
+
+#ifndef TRACE_BATCH_PREFIX
+#define TRACE_BATCH_PREFIX "cherry-real"
+#endif
+
+#ifndef TRACE_SUPPLY_CHAIN_STAGE
+#define TRACE_SUPPLY_CHAIN_STAGE "storage"
+#endif
+
+#ifndef TRACE_FALLBACK_DATE
+#define TRACE_FALLBACK_DATE "2026-05-08"
+#endif
+
+#ifndef TRACE_FALLBACK_START_HOUR_UTC
+#define TRACE_FALLBACK_START_HOUR_UTC 12
+#endif
+
+#endif /* TRACE_UPLOAD_CONFIG_H */
