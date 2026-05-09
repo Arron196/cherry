@@ -1,0 +1,418 @@
+{
+  "project": {
+    "name": "cherry",
+    "mcu": "STM32H743ZIT6",
+    "reconstruction": "firmware-backed",
+    "source_of_truth": [
+      "hardware/cherry/Core/Inc/main.h",
+      "hardware/cherry/Core/Src/main.c",
+      "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+      "hardware/cherry/Core/Src/cherry_hw.c",
+      "hardware/cherry/Core/Src/stm32h7xx_it.c",
+      "hardware/cherry/HARDWARE_GUIDE.md"
+    ],
+    "notes": [
+      "This netlist is reconstructed from repository evidence, not exported from the vendor EDA database.",
+      "The existing hardware/pcb/cherry.eprj2 file is preserved as-is."
+    ]
+  },
+  "components": [
+    {
+      "ref": "U1",
+      "value": "STM32H743ZIT6",
+      "role": "mcu",
+      "package": "LQFP144"
+    },
+    {
+      "ref": "U2",
+      "value": "SHT31-DIS",
+      "role": "temp_humidity_sensor"
+    },
+    {
+      "ref": "U3",
+      "value": "ATECC608A",
+      "role": "secure_element"
+    },
+    {
+      "ref": "U4",
+      "value": "DS3231SN",
+      "role": "rtc"
+    },
+    {
+      "ref": "U5",
+      "value": "MH-Z19B",
+      "role": "co2_sensor"
+    },
+    {
+      "ref": "U6",
+      "value": "ESP8266",
+      "role": "wifi_module"
+    },
+    {
+      "ref": "U7",
+      "value": "SX1278",
+      "role": "lora_module"
+    },
+    {
+      "ref": "D1",
+      "value": "STATUS_LED",
+      "role": "indicator"
+    },
+    {
+      "ref": "PWR1",
+      "value": "18650_CELL",
+      "role": "battery"
+    },
+    {
+      "ref": "REG1",
+      "value": "3V3_REGULATOR",
+      "role": "power_regulator"
+    },
+    {
+      "ref": "NP1",
+      "value": "VIBRATION_SENSOR",
+      "role": "optional_sensor"
+    }
+  ],
+  "nets": [
+    {
+      "name": "I2C1_SCL",
+      "nodes": [
+        "PB8",
+        "STM32H743ZIT6.I2C1_SCL",
+        "SHT31-DIS.SCL",
+        "ATECC608A.SCL",
+        "DS3231SN.SCL"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Shared I2C1 clock line",
+        "Requires 4.7k pull-up to 3V3 per hardware guide"
+      ]
+    },
+    {
+      "name": "I2C1_SDA",
+      "nodes": [
+        "PB9",
+        "STM32H743ZIT6.I2C1_SDA",
+        "SHT31-DIS.SDA",
+        "ATECC608A.SDA",
+        "DS3231SN.SDA"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Shared I2C1 data line",
+        "Requires 4.7k pull-up to 3V3 per hardware guide"
+      ]
+    },
+    {
+      "name": "UART4_TX",
+      "nodes": [
+        "PA0",
+        "STM32H743ZIT6.UART4_TX",
+        "MH-Z19B.RX"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "UART4 at 9600 8N1"
+      ]
+    },
+    {
+      "name": "UART4_RX",
+      "nodes": [
+        "PA1",
+        "STM32H743ZIT6.UART4_RX",
+        "MH-Z19B.TX"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "UART4 at 9600 8N1"
+      ]
+    },
+    {
+      "name": "USART1_TX",
+      "nodes": [
+        "PA9",
+        "STM32H743ZIT6.USART1_TX",
+        "ESP8266.RX"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "USART1 at 115200 8N1"
+      ]
+    },
+    {
+      "name": "USART1_RX",
+      "nodes": [
+        "PA10",
+        "STM32H743ZIT6.USART1_RX",
+        "ESP8266.TX"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "USART1 at 115200 8N1"
+      ]
+    },
+    {
+      "name": "ESP8266_EN",
+      "nodes": [
+        "ESP8266.EN",
+        "3V3"
+      ],
+      "confidence": "guide-confirmed",
+      "evidence": [
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "The hardware guide requires EN pulled high."
+      ]
+    },
+    {
+      "name": "SPI1_SCK",
+      "nodes": [
+        "PA5",
+        "STM32H743ZIT6.SPI1_SCK",
+        "SX1278.SCK"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "SPI1 clock"
+      ]
+    },
+    {
+      "name": "SPI1_MISO",
+      "nodes": [
+        "PA6",
+        "STM32H743ZIT6.SPI1_MISO",
+        "SX1278.MISO"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "SPI1 MISO"
+      ]
+    },
+    {
+      "name": "SPI1_MOSI",
+      "nodes": [
+        "PA7",
+        "STM32H743ZIT6.SPI1_MOSI",
+        "SX1278.MOSI"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/stm32h7xx_hal_msp.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "SPI1 MOSI"
+      ]
+    },
+    {
+      "name": "LORA_NSS",
+      "nodes": [
+        "PB6",
+        "STM32H743ZIT6.GPIO_PB6",
+        "SX1278.NSS"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "LoRa chip select"
+      ]
+    },
+    {
+      "name": "LORA_RESET",
+      "nodes": [
+        "PB5",
+        "STM32H743ZIT6.GPIO_PB5",
+        "SX1278.RESET"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "LoRa reset line"
+      ]
+    },
+    {
+      "name": "LORA_DIO0",
+      "nodes": [
+        "PB4",
+        "STM32H743ZIT6.GPIO_PB4",
+        "SX1278.DIO0"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/Core/Src/stm32h7xx_it.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "EXTI rising interrupt used for LoRa TX done"
+      ]
+    },
+    {
+      "name": "STATUS_LED",
+      "nodes": [
+        "PB0",
+        "STM32H743ZIT6.GPIO_PB0",
+        "STATUS_LED.A"
+      ],
+      "confidence": "code-confirmed",
+      "evidence": [
+        "hardware/cherry/Core/Inc/main.h",
+        "hardware/cherry/Core/Src/main.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Status LED output",
+        "Current-limiting resistor not described in repository sources"
+      ]
+    },
+    {
+      "name": "3V3",
+      "nodes": [
+        "STM32H743ZIT6.VDD",
+        "SHT31-DIS.VCC",
+        "ATECC608A.VCC",
+        "DS3231SN.VCC",
+        "MH-Z19B.VCC",
+        "ESP8266.VCC",
+        "SX1278.VCC",
+        "STATUS_LED.SUPPLY",
+        "REG1.OUT"
+      ],
+      "confidence": "inferred-shared-rail",
+      "evidence": [
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Shared 3.3V domain from the guide"
+      ]
+    },
+    {
+      "name": "GND",
+      "nodes": [
+        "STM32H743ZIT6.GND",
+        "SHT31-DIS.GND",
+        "ATECC608A.GND",
+        "DS3231SN.GND",
+        "MH-Z19B.GND",
+        "ESP8266.GND",
+        "SX1278.GND",
+        "STATUS_LED.GND",
+        "REG1.GND",
+        "PWR1.GND"
+      ],
+      "confidence": "inferred-shared-rail",
+      "evidence": [
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Common ground required by the guide"
+      ]
+    },
+    {
+      "name": "BATTERY_INPUT",
+      "nodes": [
+        "PWR1.POS",
+        "REG1.IN"
+      ],
+      "confidence": "guide-confirmed",
+      "evidence": [
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Repository guide documents an 18650 plus charger and regulator chain, but not a full charger schematic."
+      ]
+    },
+    {
+      "name": "I2C1_PULLUP",
+      "nodes": [
+        "I2C1_SCL",
+        "I2C1_SDA",
+        "3V3"
+      ],
+      "confidence": "guide-confirmed",
+      "evidence": [
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "4.7k pull-ups required on both I2C lines"
+      ]
+    },
+    {
+      "name": "VIBRATION_SENSOR",
+      "nodes": [],
+      "confidence": "not-populated",
+      "evidence": [
+        "hardware/cherry/Core/Src/cherry_hw.c",
+        "hardware/cherry/HARDWARE_GUIDE.md"
+      ],
+      "notes": [
+        "Current firmware build does not wire a dedicated vibration sensor input."
+      ]
+    }
+  ]
+}
